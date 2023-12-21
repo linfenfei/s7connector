@@ -16,21 +16,11 @@ limitations under the License.
 package com.github.s7connector.api;
 
 import com.github.s7connector.api.S7Serializable;
-import com.github.s7connector.impl.serializer.converter.BitConverter;
-import com.github.s7connector.impl.serializer.converter.ByteConverter;
-import com.github.s7connector.impl.serializer.converter.DateAndTimeConverter;
-import com.github.s7connector.impl.serializer.converter.DateConverter;
-import com.github.s7connector.impl.serializer.converter.IntegerConverter;
-import com.github.s7connector.impl.serializer.converter.LongConverter;
-import com.github.s7connector.impl.serializer.converter.ShortConverter;
-import com.github.s7connector.impl.serializer.converter.RealConverter;
-import com.github.s7connector.impl.serializer.converter.StringConverter;
-import com.github.s7connector.impl.serializer.converter.StructConverter;
-import com.github.s7connector.impl.serializer.converter.TimeConverter;
+import com.github.s7connector.impl.serializer.converter.*;
 
 /**
  * Type of the Address
- * 
+ *
  * @author Thomas Rudin Libnodave: http://libnodave.sourceforge.net/
  */
 public enum S7Type {
@@ -63,6 +53,11 @@ public enum S7Type {
 	 * Real-type, corresponds to float or double
 	 */
 	REAL(RealConverter.class, 4, 0),
+
+	/**
+	 * LReal-type, corresponds to 64bit double
+	 */
+	LREAL(LRealConverter.class, 8, 0),
 
 	/**
 	 * String type, size must be specified manually
